@@ -1,5 +1,11 @@
 const express = require('express');
 const app = express();
+var cors = require('cors');
+
+var corsOptions = {
+  origin: 'http://localhost:3001',
+  optionsSuccessStatus: 200
+}
 
 app.set('port', process.env.PORT || 3000);
 app.locals.title = 'DOGS';
@@ -26,7 +32,7 @@ app.locals.dogs = [
   }
 ]
 
-app.get('/api/v1/dogs', (request, response) => {
+app.get('/api/v1/dogs', cors(corsOptions), (request, response, next) => {
   const { dogs } = app.locals;
 
   response.status(200).json(dogs);
