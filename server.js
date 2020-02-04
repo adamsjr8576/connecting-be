@@ -3,7 +3,7 @@ const app = express();
 var cors = require('cors');
 
 var corsOptions = {
-  origin: 'http://localhost:3001',
+  origin: 'https://connecting-front-end.herokuapp.com/',
   optionsSuccessStatus: 200
 }
 const environment = process.env.NODE_ENV || 'development';
