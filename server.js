@@ -6,8 +6,9 @@ var corsOptions = {
   origin: 'http://localhost:3001',
   optionsSuccessStatus: 200
 }
-
+const environment = process.env.NODE_ENV || 'development';
 app.set('port', process.env.PORT || 3000);
+
 app.locals.title = 'DOGS';
 app.locals.dogs = [
   {
